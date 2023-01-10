@@ -1,0 +1,70 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mx;
+
+//Barra de navegacion
+.header {
+    background-color: v.$verde;
+    @include mx.tablet {
+        &.fijo {
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333;
+        }
+    }
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+        margin-bottom: 5rem;
+        @include mx.tablet {
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 2rem;
+        @include mx.tablet {
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+}
+.navegacion-principal {
+    ul {
+        @include mx.reset-list;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        li {
+            margin-top: 2rem;
+        }
+    }
+    @include mx.tablet {
+        display: flex;
+        align-items: center;
+        ul {
+            flex-direction: row;
+            li {
+                margin-top: 0;
+                margin-right: 2rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    a {
+        display: block;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        text-align: center;
+        @include mx.tablet {
+            margin : 0;
+        }
+        &:hover {
+            color: v.$amarillo;
+        } //esto sin el & al compilar separa el :hover del a
+    }
+}
+//Banner principal
+
