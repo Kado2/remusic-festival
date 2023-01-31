@@ -1,9 +1,0 @@
-/* Antigua forma
-@import 'base/variables';
-@import 'contenido/contenido';
-
-//Las importaciones solo son necesarias en el archivo global de SASS
-*/
-// Actual
-@use 'base';
-@use 'layout';
